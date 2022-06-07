@@ -90,7 +90,9 @@ public:
 
     template <typename V, typename = typename std::enable_if<
                               std::is_integral<V>::value>::type>
-    bool operator==(V val) const { return val_ == val; }
+    bool operator==(V val) const {
+        return val_ == val;
+    }
 
     friend std::istream& operator>>(std::istream& is, const ModNum& o) {
         return is >> o();
